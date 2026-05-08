@@ -20,13 +20,23 @@
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       background:
+        url('/why-img.svg') center/cover no-repeat fixed,
         radial-gradient(900px 400px at -10% -20%, rgba(124,58,237,.24) 0%, transparent 55%),
         radial-gradient(800px 300px at 110% 0%, rgba(34,197,94,.18) 0%, transparent 45%),
         linear-gradient(160deg, var(--bg), var(--bg2));
       color:var(--text);
       min-height:100vh;
     }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 8, 8, 0.72);
+      pointer-events: none;
+      z-index: 0;
+    }
     .wrap { max-width: 640px; margin: 8vh auto; padding: 24px; }
+    .wrap { position: relative; z-index: 1; }
     .card {
       background:linear-gradient(180deg, rgba(18,18,18,.95), rgba(10,10,10,.95));
       border:1px solid var(--border);
@@ -83,14 +93,6 @@
       letter-spacing:.04em;
       text-transform:uppercase;
     }
-    .hero-art {
-      width: 100%;
-      max-width: 220px;
-      opacity: .95;
-      margin: 8px auto 14px;
-      display: block;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,.35));
-    }
   </style>
 </head>
 <body>
@@ -101,7 +103,6 @@
         <span>CTO Marketplace</span>
       </div>
       <span class="badge">Solana Devnet Faucet</span>
-      <img class="hero-art" src="/why-img.svg" alt="CTO visual" />
       <h1>CTO Solana Faucet</h1>
       <p>Enter your Solana wallet to receive test funds (USDC + SOL gas).</p>
       <form id="faucetForm">
