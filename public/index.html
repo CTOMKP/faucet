@@ -62,12 +62,37 @@
       color:#d4d4d4;
       background:rgba(255,255,255,.02);
     }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:12px;
+    }
+    .brand img {
+      width:34px;
+      height:34px;
+      border-radius:8px;
+      object-fit:contain;
+      background:#0e0e0e;
+      border:1px solid #2d2d2d;
+      padding:3px;
+    }
+    .brand span {
+      font-size:.92rem;
+      color:#d4d4d4;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <span class="badge">CTO Marketplace • Solana Devnet Faucet</span>
+      <div class="brand">
+        <img src="/logo.png" alt="CTO Marketplace logo" />
+        <span>CTO Marketplace</span>
+      </div>
+      <span class="badge">Solana Devnet Faucet</span>
       <h1>CTO Solana Faucet</h1>
       <p>Enter your Solana wallet to receive test funds (USDC + SOL gas).</p>
       <form id="faucetForm">
