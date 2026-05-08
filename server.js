@@ -46,7 +46,8 @@ app.post('/api/faucet/request', async (req, res) => {
     });
 
     const payload = await response.json().catch(() => ({}));
-    return res.status(response.status).json(payload);
+    const normalized = payload?.data && typeof payload.data === 'object' ? payload.data : payload;
+    return res.status(response.status).json(normalized);
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Upstream request failed';
     return res.status(502).json({ message });
