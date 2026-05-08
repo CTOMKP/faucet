@@ -83,16 +83,25 @@
       letter-spacing:.04em;
       text-transform:uppercase;
     }
+    .hero-art {
+      width: 100%;
+      max-width: 220px;
+      opacity: .95;
+      margin: 8px auto 14px;
+      display: block;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,.35));
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
       <div class="brand">
-        <img src="/logo.png" alt="CTO Marketplace logo" />
+        <img src="/cto-logo-small.png" alt="CTO Marketplace logo" />
         <span>CTO Marketplace</span>
       </div>
       <span class="badge">Solana Devnet Faucet</span>
+      <img class="hero-art" src="/why-img.svg" alt="CTO visual" />
       <h1>CTO Solana Faucet</h1>
       <p>Enter your Solana wallet to receive test funds (USDC + SOL gas).</p>
       <form id="faucetForm">
